@@ -14,18 +14,11 @@ const oldPointStructure = {
 
 const vowels = ["A", "E", "I", "O", "U"]
 
-
-
-
-
-
-
-
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
 
 function initialPrompt() {
-   let response = input.question("Let's play some scrabble! Enter a word: ");
+   let response = input.question("Let's play some scrabble! \nEnter a word to use: ");
    return response
 };
 
@@ -90,7 +83,7 @@ let scrabbleScorer = {
 const scoringAlgorithms = [simpleScorer, vowelBonusScorer, scrabbleScorer];
 
 function scorerPrompt() {
-   let scorer = input.question("Which scoring function would you like to use: [0] = Simple Scorer, [1] = Vowel Bonus, [2] = Scrabble, type a number: ")
+   let scorer = input.question("\nWhich scoring function would you like to use: \n[0] = Simple Scorer \n[1] = Vowel Bonus \n[2] = Scrabble \nEnter the number: ")
    return scorer
 }
 
