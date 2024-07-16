@@ -56,7 +56,7 @@ let vowelBonusScorer = {
          }
    
       }
-      return `Score for the word "${word}": ${letterPoints}`
+      return letterPoints
    }
 }
 
@@ -72,7 +72,7 @@ let scrabbleScorer = {
          letterPoints += Number(newPointStructure[word[i].toLowerCase()])
          
       }
-      return `Score for the word "${word}": ${letterPoints}`
+      return letterPoints
     }
 }
 
@@ -84,16 +84,18 @@ function scorerPrompt() {
 }
 
 function transform(object) {
+   let newObject = {}
    for (item in object){
       for(let i = 0; i < object[item].length; i++){
-         object[object[item][i].toLowerCase()] = item
+         newObject[object[item][i].toLowerCase()] = String(item)
       }
-      delete object[item]
    }
-   return object
+   return newObject
 };
 
 function runProgram() {
+   console.log(transform(oldPointStructure))
+   return
    let word = initialPrompt()
    console.log(scorerPrompt().scorerFunction(word));
    
