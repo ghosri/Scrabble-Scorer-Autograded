@@ -36,7 +36,7 @@ let simpleScorer = {
          letterPoints += 1
       }
       
-      return `Score for the word "${word}": ${letterPoints}`
+      return letterPoints
    }
 }
 
@@ -94,8 +94,6 @@ function transform(object) {
 };
 
 function runProgram() {
-   console.log(transform(oldPointStructure))
-   return
    let word = initialPrompt()
    console.log(scorerPrompt().scorerFunction(word));
    
