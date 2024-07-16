@@ -54,7 +54,6 @@ let vowelBonusScorer = {
          else{
             letterPoints += 1
          }
-   
       }
       return letterPoints
    }
